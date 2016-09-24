@@ -1,10 +1,15 @@
-$("h2").click(function() {
+$("#make").click(function() {
+	userSentence = prompt("Enter your sencence:");
+	runCipherFunctions();
+});
+
+$("#original").click(function() {
 	alert(userSentence);
 });
 
-$("h3").click(function() {
+$("#cipher").click(function() {
 	alert(cipherSentence);
-})
+});
 
 
 var runCipherFunctions = function() {
@@ -13,7 +18,7 @@ var runCipherFunctions = function() {
 	cipherSentence = userSentence + cipherSentence;
 	eighthLetter(userSentence);
 	cipherSentence = cipherSentence.split('').reverse().join('')
-	alert(cipherSentence);
+	return(cipherSentence);
 };
 
 var captalizeLetters = function(sentence) {
@@ -28,8 +33,5 @@ var eighthLetter = function(sentence) {
 	cipherSentence = sentence.charAt(sentence.length / 2) + cipherSentence;
 };
 
+var userSentence = "";
 var cipherSentence = "";
-
-var userSentence = prompt("Enter your sencence:");
-
-runCipherFunctions();
